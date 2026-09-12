@@ -4,7 +4,9 @@
 Usage:  python3 build.py
 Needs:  Python 3.9+ and PyYAML  (pip install pyyaml)
 
-Writes index.html, publications.bib, sitemap.xml and robots.txt.
+Writes index.html, publications.html, talks.html, projects.html,
+outreach.html,
+publications.bib, sitemap.xml and robots.txt.
 """
 
 import html
@@ -66,6 +68,36 @@ def bold_me(authors):
 
 
 # --------------------------------------------------------------------------
+
+SUBPAGE = """<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+%(noindex)s<title>%(heading)s — %(name)s</title>
+<meta name="description" content="%(desc)s">
+<link rel="canonical" href="%(base)s/%(file)s">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="%(font)s" rel="stylesheet">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+
+%(logo)s
+<h1>%(heading)s</h1>
+<p class="toplinks"><a href="index.html">&#8592; %(name)s</a>%(extra_links)s</p>
+%(intro)s
+%(body)s
+
+<footer>
+<p><a href="index.html">Back to %(name)s</a></p>
+</footer>
+
+</body>
+</html>
+"""
+
 
 def gallery(cfg, name):
     """A row of three images, used above Papers and above Field campaigns."""
@@ -246,18 +278,22 @@ def main():
             '<figcaption>%s<span class="when">%s</span></figcaption></figure>'
             % (player(v), esc(v["title"]), esc(v.get("outlet", "")))
             for v in vids)
-        videos_html = ('<h2 id="videos">Videos</h2>\n<div class="videos">%s</div>\n\n' % cards)
+        # 4 videos look wrong in a 3-wide grid (3 + 1 orphan), so pair them up
+        cols = 2 if len(vids) in (2, 4) else min(len(vids), 3)
+        videos_html = ('<h2 id="videos">Videos</h2>\n'
+                       '<div class="videos" style="grid-template-columns:repeat(%d,1fr)">'
+                       '%s</div>\n\n' % (cols, cards))
 
     dp = cfg["dust_protocol"]
     dp_links = " · ".join('<a href="%s">%s</a>' % (esc(l["url"]), esc(l["name"]))
                           for l in dp["links"])
 
     jump_all = jump + ['<a href="#field-campaigns">Field campaigns</a>',
-                       '<a href="#projects">Projects</a>',
-                       '<a href="#talks">Talks</a>',
-                       '<a href="#outreach">Outreach</a>',
                        '<a href="#videos">Videos</a>',
                        '<a href="#dust-protocol">The Dust Protocol</a>',
+                       '<a href="talks.html">Talks</a>',
+                       '<a href="projects.html">Projects</a>',
+                       '<a href="outreach.html">Outreach</a>',
                        '<a href="publications.html">All publications</a>']
 
     page = """<!doctype html>
@@ -294,18 +330,9 @@ def main():
 <h2 id="field-campaigns">Field campaigns</h2>
 <ul class="plain">%(campaigns)s</ul>
 
-<h2 id="projects">Projects</h2>
-<ul class="plain">%(projects)s</ul>
-
-<h2 id="talks">Talks</h2>
-<p class="note">Invited and contributed talks, seminars and public lectures.</p>
-<ul class="plain">%(talks)s</ul>
-
-<h2 id="outreach">Outreach</h2>
-<h3>Interviews</h3>
-<ul class="plain">%(interviews)s</ul>
-<h3>Press</h3>
-<ul class="plain">%(press)s</ul>
+<p class="note">Also here: <a href="talks.html">talks</a> (19 invited and contributed),
+<a href="projects.html">projects</a> (nine, 2007 to 2025), and
+<a href="outreach.html">outreach</a> (interviews and press).</p>
 
 %(videos)s<h2 id="dust-protocol">The Dust Protocol</h2>
 <p>%(dp_desc)s</p>
@@ -324,10 +351,8 @@ def main():
         "toplinks": toplinks, "photos": photos,
         "jump": " | ".join(jump_all), "intro": intro,
         "sections": "\n\n".join(sections),
-        "projects": projects, "campaigns": campaigns,
+        "campaigns": campaigns,
         "campaign_gallery": gallery(cfg, "campaigns"),
-        "interviews": simple(cfg["interviews"]), "press": simple(cfg["press"]),
-        "talks": simple(cfg["talks"]),
         "videos": videos_html,
         "dp_desc": esc(dp["description"]), "dp_links": dp_links,
         "orcid": esc(site["orcid"]), "total": total,
@@ -381,20 +406,64 @@ def main():
         "orcid": esc(site["orcid"]), "today": date.today().isoformat(),
     }
     (ROOT / "publications.html").write_text(full, encoding="utf-8")
+
+    shell = {
+        "noindex": noindex, "font": FONT_LINK,
+        "name": esc(site["name"]), "base": esc(site["base_url"]),
+        "logo": ('<img class="logo" src="%s" alt="Atmospheric Dust">' % esc(cfg["logo"]))
+                if cfg.get("logo") else "",
+    }
+
+    (ROOT / "projects.html").write_text(SUBPAGE % dict(
+        shell,
+        heading="Projects",
+        file="projects.html",
+        desc="Research projects and funding of %s." % site["name"],
+        extra_links="",
+        intro='<p class="note">Research projects and funding, most recent first.</p>',
+        body='<ul class="plain">%s</ul>' % projects,
+    ), encoding="utf-8")
+
+    (ROOT / "talks.html").write_text(SUBPAGE % dict(
+        shell,
+        heading="Talks",
+        file="talks.html",
+        desc="Invited and contributed talks by %s." % site["name"],
+        extra_links="",
+        intro='<p class="note">Invited and contributed talks, seminars and public '
+              'lectures, most recent first.</p>',
+        body='<ul class="plain">%s</ul>' % simple(cfg["talks"]),
+    ), encoding="utf-8")
+
+    (ROOT / "outreach.html").write_text(SUBPAGE % dict(
+        shell,
+        heading="Outreach",
+        file="outreach.html",
+        desc="Interviews and press coverage featuring %s." % site["name"],
+        extra_links="",
+        intro='<p class="note">Interviews, broadcasts and press on atmospheric dust, '
+              'extreme weather and the role of aerosols in climate.</p>',
+        body='<h2>Interviews</h2><ul class="plain">%s</ul>'
+             '<h2>Press</h2><ul class="plain">%s</ul>'
+             % (simple(cfg["interviews"]), simple(cfg["press"])),
+    ), encoding="utf-8")
     (ROOT / "publications.bib").write_text(
         "%% Publications of %s — generated %s\n\n" % (site["name"], date.today().isoformat())
         + "\n\n".join(bib) + "\n", encoding="utf-8")
     (ROOT / "sitemap.xml").write_text(
         '<?xml version="1.0" encoding="UTF-8"?>'
         '<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">'
-        "<url><loc>%s</loc><lastmod>%s</lastmod></url></urlset>\n"
-        % (site["base_url"], date.today().isoformat()), encoding="utf-8")
+        + "".join("<url><loc>%s/%s</loc><lastmod>%s</lastmod></url>"
+                  % (site["base_url"], f, date.today().isoformat())
+                  for f in ("", "publications.html", "talks.html",
+                            "projects.html", "outreach.html"))
+        + "</urlset>\n", encoding="utf-8")
     (ROOT / "robots.txt").write_text(
         "User-agent: *\nDisallow: /\n" if staging else
         "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % site["base_url"],
         encoding="utf-8")
 
-    print("Built index.html and publications.html — %d publications.%s"
+    print("Built 5 pages — %d publications.%s"
           % (total, "  [staging: noindex]" if staging else ""))
 
 

@@ -145,6 +145,10 @@ footer {
 .gallery + h2 { margin-top: 1.25rem; }
 h2 + .gallery { margin-top: 1rem; }
 
+@media (max-width: 40rem) {
+  .videos { grid-template-columns: 1fr !important; }
+}
+
 @media (max-width: 30rem) {
   .gallery { grid-template-columns: 1fr 1fr; }
   .gallery img:last-child { grid-column: span 2; }
@@ -160,9 +164,10 @@ h2 + .gallery { margin-top: 1rem; }
 
 .videos {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-  gap: 1.25rem .75rem;
+  grid-template-columns: repeat(2, 1fr);   /* overridden inline by the build */
+  gap: 1.5rem 1rem;
   margin: 1.5rem 0 0;
+  align-items: start;
 }
 .videos figure { margin: 0; }
 .embed {
