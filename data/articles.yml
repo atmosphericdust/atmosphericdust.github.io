@@ -1,0 +1,171 @@
+# Peer-reviewed journal articles, book chapters, thesis, technical solutions.
+# Add a new entry at the top of the relevant list, then run: python3 build.py
+#
+# Fields: year, authors, title, venue, details, doi, url, cat (Serbian M-category), key (BibTeX key)
+
+articles:
+  - year: 2024
+    authors: "Eskes, H., Tsikerdekis, A., Benedictow, A., … Ilić, L., … Peuch, V.-H."
+    note: "16 of 32 authors"
+    title: "Technical note: Evaluation of the Copernicus Atmosphere Monitoring Service Cy48R1 upgrade of June 2023"
+    venue: "Atmospheric Chemistry and Physics"
+    details: "24, 9475–9514"
+    doi: "10.5194/acp-24-9475-2024"
+    cat: "M21a"
+    key: "eskes2024cy48r1"
+
+  - year: 2023
+    authors: "Nickovic, S., Petković, S., Ilić, L., Pejanović, G., Mijić, Z., Huete, A., Marks, G."
+    title: "Prediction of airborne pollen and sub-pollen particles for thunderstorm asthma outbreaks assessment"
+    venue: "Science of the Total Environment"
+    details: "864, 160879"
+    doi: "10.1016/j.scitotenv.2022.160879"
+    cat: "M21a+"
+    key: "nickovic2023pollen"
+
+  - year: 2023
+    authors: "Mijić, Z., Ilić, L., Kuzmanoski, M."
+    title: "Data quality assurance for atmospheric probing and modeling: characterization of Belgrade Raman lidar station"
+    venue: "Contributions of the Astronomical Observatory Skalnaté Pleso"
+    details: "53(3), 163–175"
+    doi: "10.31577/caosp.2023.53.3.163"
+    cat: "M23"
+    key: "mijic2023lidarqa"
+
+  - year: 2022
+    authors: "Barreto, Á., Cuevas, E., García, R. D., Carrillo, J., Prospero, J. M., Ilić, L., Basart, S., Berjón, A. J., Marrero, C. L., Hernández, Y., Bustos, J. J., Ničković, S., Yela, M."
+    title: "Long-term characterisation of the vertical structure of the Saharan Air Layer over the Canary Islands using lidar and radiosonde profiles: implications for radiative and cloud processes over the subtropical Atlantic Ocean"
+    venue: "Atmospheric Chemistry and Physics"
+    details: "22, 739–763"
+    doi: "10.5194/acp-22-739-2022"
+    cat: "M21a"
+    key: "barreto2022sal"
+
+  - year: 2022
+    authors: "Ilić, L., Jovanović, A., Kuzmanoski, M., Lazić, L., Madonna, F., Rosoldi, M., Mytilinaios, M., Marinou, E., Ničković, S."
+    title: "Mineralogy sensitive immersion freezing parameterization in DREAM"
+    venue: "Journal of Geophysical Research: Atmospheres"
+    details: "127, e2021JD035093"
+    doi: "10.1029/2021JD035093"
+    cat: "M21"
+    key: "ilic2022dream"
+
+  - year: 2018
+    authors: "Ilić, L., Kuzmanoski, M., Kolarž, P., Nina, A., Srećković, V., Mijić, Z., Bajčetić, J., Andrić, M."
+    title: "Changes of atmospheric properties over Belgrade, observed using remote sensing and in situ methods during the partial solar eclipse of 20 March 2015"
+    venue: "Journal of Atmospheric and Solar-Terrestrial Physics"
+    details: "171, 250–259"
+    doi: "10.1016/j.jastp.2017.10.001"
+    cat: "M22"
+    key: "ilic2018eclipse"
+
+  - year: 2018
+    authors: "Vudragović, D., Ilić, L., Jovanović, P., Nickovic, S., Bogojević, A., Balaž, A."
+    title: "VI-SEEM DREAMCLIMATE service"
+    venue: "Scalable Computing: Practice and Experience"
+    details: "19(2), 215–221"
+    doi: "10.12694/scpe.v19i2.1396"
+    cat: "M23"
+    key: "vudragovic2018dreamclimate"
+
+  - year: 2016
+    authors: "Granados-Muñoz, M. J., Navas-Guzmán, F., … Ilić, L., … Ničković, S., … Vuković, A., … Alados-Arboledas, L."
+    note: "14 of 28 authors"
+    title: "Profiling of aerosol microphysical properties at several EARLINET/AERONET sites during the July 2012 ChArMEx/EMEP campaign"
+    venue: "Atmospheric Chemistry and Physics"
+    details: "16, 7043–7066"
+    doi: "10.5194/acp-16-7043-2016"
+    cat: "M21a+"
+    key: "granados2016charmex"
+
+  - year: 2016
+    authors: "Lazić, L., Aničić Urošević, M., Mijić, Z., Vuković, G., Ilić, L."
+    title: "Traffic contribution to air pollution in urban street canyons: integrated application of the OSPM, moss biomonitoring and spectral analysis"
+    venue: "Atmospheric Environment"
+    details: "141, 347–360"
+    doi: "10.1016/j.atmosenv.2016.07.008"
+    cat: "M21"
+    key: "lazic2016ospm"
+
+  - year: 2015
+    authors: "Binietoglou, I., Basart, S., … Ilić, L., … Pejanović, G., … Vuković, A., … Wagner, J."
+    note: "19 of 42 authors"
+    title: "A methodology for investigating dust model performance using synergistic EARLINET/AERONET dust concentration retrievals"
+    venue: "Atmospheric Measurement Techniques"
+    details: "8, 3577–3600"
+    doi: "10.5194/amt-8-3577-2015"
+    cat: "M21"
+    key: "binietoglou2015dustretrieval"
+
+  - year: 2015
+    authors: "Stojić, A., Stanišić Stojić, S., Šoštarić, A., Ilić, L., Mijić, Z., Rajšić, S."
+    title: "Characterization of VOC sources in an urban area based on PTR-MS measurements and receptor modelling"
+    venue: "Environmental Science and Pollution Research"
+    details: "22, 13137–13152"
+    doi: "10.1007/s11356-015-4540-5"
+    cat: "M21"
+    key: "stojic2015voc"
+
+  - year: 2014
+    authors: "Lazić, L., Pejanović, G., Živković, M., Ilić, L."
+    title: "Improved wind forecasts for wind power generation using the Eta model and MOS (Model Output Statistics) method"
+    venue: "Energy"
+    details: "73, 567–574"
+    doi: "10.1016/j.energy.2014.06.056"
+    cat: "M21a+"
+    key: "lazic2014wind"
+
+  - year: 2014
+    authors: "Papayannis, A., Nicolae, D., Kokkalis, P., Binietoglou, I., Talianu, C., Belegante, L., Tsaknakis, G., Cazacu, M. M., Vetres, I., Ilić, L."
+    title: "Optical, size and mass properties of mixed type aerosols in Greece and Romania as observed by synergy of lidar and sunphotometers in combination with model simulations: a case study"
+    venue: "Science of the Total Environment"
+    details: "500–501, 277–294"
+    doi: "10.1016/j.scitotenv.2014.08.101"
+    cat: "M21a"
+    key: "papayannis2014mixedaerosols"
+
+  - year: 2013
+    authors: "Ivković, S., Ilić, L., Stanković, M., Radojičić, R., Babović, Z."
+    title: "Source-sink model"
+    venue: "IPSI Transactions on Internet Research"
+    details: "9(2), 28–33"
+    url: "https://vipsi.org/ipsi/journals/journals/papers/tir/2013july/tir2013july.pdf#page=30"
+    cat: "M53"
+    key: "ivkovic2013sourcesink"
+
+  - year: 2010
+    authors: "Kotroni, V., Floros, E., Lagouvardos, K., Pejanović, G., Ilić, L., Živković, M."
+    title: "Multi-model multi-analysis ensemble weather forecasting on the grid for the South Eastern Mediterranean Region"
+    venue: "Earth Science Informatics"
+    details: "3, 209–218"
+    doi: "10.1007/s12145-010-0071-2"
+    cat: "M23"
+    key: "kotroni2010ensemble"
+
+chapters:
+  - year: 2015
+    authors: "Stojić, A., Stanišić Stojić, S., Mijić, Z., Ilić, L., Tomašević, M., Todorović, M., Perišić, M."
+    title: "Comprehensive analysis of VOC emission sources in Belgrade urban area"
+    venue: "Urban and Built Environments: Sustainable Development, Health Implications and Challenges (ed. A. Cohen), Nova Science Publishers, New York"
+    details: "pp. 55–87, ISBN 978-1-63483-117-8"
+    url: "https://novapublishers.com/shop/urban-and-built-environments-sustainable-development-health-implications-and-challenges/"
+    cat: "M13"
+    key: "stojic2015chapter"
+
+theses:
+  - year: 2022
+    authors: "Ilić, L."
+    title: "Numerical modeling of ice nucleating properties of atmospheric mineral aerosol"
+    venue: "PhD thesis, Faculty of Physics, University of Belgrade"
+    details: "Supervisors: Prof. Dr Lazar Lazić, Dr Maja Kuzmanoski"
+    cat: "M70"
+    key: "ilic2022phd"
+
+technical:
+  - year: 2015
+    authors: "Ivković, S., Ilić, L., Radojičić, R., Stanković, M., Babović, Z., Bojović, M., Milutinović, V."
+    title: "Acceleration algorithm for the source-sink model for weather forecasting"
+    venue: "New technical solution at national level, registered at enauka.gov.rs"
+    url: "https://enauka.gov.rs/handle/123456789/317886?locale=en"
+    cat: "M82"
+    key: "ivkovic2015techsolution"

@@ -1,0 +1,342 @@
+# Conference output.
+#   proceedings — full papers printed in conference proceedings (M33)
+#   abstracts   — abstracts and presentations (M34)
+# Add new entries at the top of the relevant list, then run: python3 build.py
+
+proceedings:
+  - year: 2023
+    authors: "Ničković, S., Ilić, L., Petković, S., Pejanović, G., Huete, A., Mijić, Z."
+    title: "Novel approach in airborne pollen dispersion modelling"
+    venue: "30th International Conference Ecological Truth and Environmental Research (EcoTER'23), Serbia, 20–23 June 2023"
+    details: "Proceedings, pp. 306–311, ISBN 978-86-6305-137-9"
+    url: "https://mibor.rs/wp-content/uploads/2023/06/Proceeding%20EcoTER23.pdf"
+    cat: "M33"
+    key: "nickovic2023ecoter"
+
+  - year: 2023
+    authors: "Mijić, Z., Ničković, S., Ilić, L., Petković, S., Pejanović, G., Huete, A."
+    title: "Recent progress and new approach in numerical modelling of airborne sub-pollen particles"
+    venue: "II International Conference on Physical Aspects of Environment (ICPAE2023), Zrenjanin, Serbia, 24–26 August 2023"
+    details: "Proceedings, pp. 48–52, ISBN 978-86-7672-366-9"
+    url: "http://www.tfzr.uns.ac.rs/icpae/conference%20program/!Zbornik%20ICPAE2023!.pdf"
+    cat: "M33"
+    key: "mijic2023icpae"
+
+  - year: 2022
+    authors: "Ničković, S., Ilić, L., Petković, S., Pejanović, G., Huete, A., Mijić, Z."
+    title: "Physically based numerical model for pollen forecast"
+    venue: "International Conference on Physical Aspects of Environment (ICPAE2022), Zrenjanin, Serbia, 31 March – 2 April 2022"
+    details: "Proceedings, pp. 189–194, ISBN 978-86-7672-354-6"
+    url: "http://www.tfzr.uns.ac.rs/icpae/conference%20program/ICPAE2022.pdf"
+    cat: "M33"
+    key: "nickovic2022icpae"
+
+  - year: 2022
+    authors: "Mijić, Z., Kuzmanoski, M., Ilić, L."
+    title: "Remote sensing of tropospheric aerosols: experience from Belgrade Raman lidar station"
+    venue: "International Conference on Physical Aspects of Environment (ICPAE2022), Zrenjanin, Serbia, 31 March – 2 April 2022"
+    details: "Proceedings, ISBN 978-86-7672-354-6"
+    url: "http://www.tfzr.uns.ac.rs/icpae/conference%20program/ICPAE2022.pdf"
+    cat: "M33"
+    key: "mijic2022icpae"
+
+  - year: 2022
+    authors: "Mijić, Z., Kuzmanoski, M., Ilić, L., Kovačević, A., Vasiljević, D."
+    title: "Review of atmospheric aerosol optical properties profiling and lidar station activities in Serbia"
+    venue: "IV Meeting on Astrophysical Spectroscopy — A&M DATA — Atmosphere, Fruška Gora, Serbia, 30 May – 2 June 2022"
+    details: "Book of Abstracts and Contributed Papers, p. 89"
+    url: "http://servo.aob.rs/eeditions/CDS/Workshops/Spectroscopy_4/papers/31.pdf"
+    cat: "M33"
+    key: "mijic2022amdata"
+
+  - year: 2017
+    authors: "Mijić, Z., Ilić, L., Kuzmanoski, M."
+    title: "Raman lidar for atmospheric aerosol profiling in Serbia"
+    venue: "49th International October Conference on Mining and Metallurgy, Bor, Serbia, 18–21 October 2017"
+    details: "Proceedings, pp. 65–68, ISBN 978-86-6305-066-2"
+    cat: "M33"
+    key: "mijic2017ramanlidar"
+
+  - year: 2017
+    authors: "Mijić, Z., Perišić, M., Ilić, L., Stojić, A., Kuzmanoski, M."
+    title: "Air mass transport over Balkan region identified by atmospheric modeling and aerosol lidar technique"
+    venue: "49th International October Conference on Mining and Metallurgy, Bor, Serbia, 18–21 October 2017"
+    details: "Proceedings, pp. 69–72, ISBN 978-86-6305-066-2"
+    cat: "M33"
+    key: "mijic2017airmass"
+
+  - year: 2017
+    authors: "Kuzmanoski, M., Ilić, L., Todorović, M., Mijić, Z."
+    title: "A study of a dust intrusion event over Belgrade, Serbia"
+    venue: "6th International WeBIOPATR Workshop & Conference, Belgrade, Serbia, 6–8 September 2017"
+    details: "Proceedings, pp. 103–108, ISBN 978-86-7306-152-8"
+    url: "https://www.vin.bg.ac.rs/webiopatr/2025/wp-content/uploads/2023/10/WEBIOPATR_2017_Proceedings1.pdf"
+    cat: "M33"
+    key: "kuzmanoski2017dustintrusion"
+
+  - year: 2015
+    authors: "Ilić, L., Kuzmanoski, M., Mijić, Z."
+    title: "Planetary boundary layer and elevated aerosol layer height retrieval from lidar signal in Belgrade"
+    venue: "5th International WeBIOPATR Workshop & Conference, Belgrade, Serbia, 14–16 October 2015"
+    details: "Proceedings, pp. 77–84"
+    url: "https://www.vin.bg.ac.rs/webiopatr/2025/wp-content/uploads/2023/10/WeBIOPATR2015_Proceedings-1.pdf"
+    cat: "M33"
+    key: "ilic2015pbl"
+
+abstracts:
+  - year: 2026
+    authors: "Ilić, L., Mijić, Z., Petković, S., Pejanović, G., Huete, A., Ničković, S."
+    title: "Toward a globally transferable numerical pollen forecasting system: advancing DREAM-POLL for multi-region pollen prediction"
+    venue: "WRF-Chem European Workshop, Rijeka, Croatia, 12–14 May 2026"
+    cat: "M34"
+    key: "ilic2026dreampoll"
+
+  - year: 2026
+    authors: "Ilić, L., Obiso, V., Gonçalves Ageitos, M., Li, L., Mahowald, N. M., Miller, R. L., Ginoux, P., Song, Q., Brodrick, P. G., Thompson, D. R., Clark, R. N., Ehlmann, B. L., Okin, G. S., Zhou, B., Kalashnikova, O., Green, R. O., Pérez García-Pando, C."
+    title: "Sensitivity of dust absorption to regionally and size-resolved mineralogy in MONARCH"
+    venue: "WRF-Chem European Workshop, Rijeka, Croatia, 12–14 May 2026"
+    cat: "M34"
+    key: "ilic2026monarch"
+
+  - year: 2025
+    authors: "Ilić, L., Obiso, V., Gonçalves Ageitos, M., Li, L., Mahowald, N. M., Miller, R. L., Ginoux, P., Song, Q., Brodrick, P. G., Thompson, D. R., Clark, R. N., Ehlmann, B. L., Okin, G. S., Zhou, B., Kalashnikova, O., Green, R. O., Pérez García-Pando, C."
+    title: "The role of soil mineralogy atlas and iron oxide mixing assumptions upon global and regional dust radiative effects in the MONARCH model"
+    venue: "AGU Fall Meeting 2025, New Orleans, LA, 15–19 December 2025"
+    details: "id. A41M-2201"
+    url: "https://agu.confex.com/agu/agu25/meetingapp.cgi/Paper/1941813"
+    cat: "M34"
+    key: "ilic2025agu"
+
+  - year: 2025
+    authors: "Ilić, L., Obiso, V., Gonçalves Ageitos, M., Li, L., Mahowald, N. M., Miller, R. L., Ginoux, P., Song, Q., Brodrick, P. G., Thompson, D. R., Clark, R. N., Ehlmann, B. L., Okin, G. S., Zhou, B., Kalashnikova, O., Green, R. O., Pérez García-Pando, C."
+    title: "Dust absorption sensitivity to mineralogy in the MONARCH model"
+    venue: "24th AeroCom / 13th AeroSat Workshop, Institut Pascal, Université Paris-Saclay, France, 13–17 October 2025"
+    url: "https://aerocom.met.no/events/aerocom2025"
+    cat: "M34"
+    key: "ilic2025aerocom"
+
+  - year: 2025
+    authors: "Obiso, V., Gonçalves Ageitos, M., Ilić, L., Jorba, O., Sousse, R., Li, L., Mahowald, N. M., Miller, R. L., Ginoux, P., Song, Q., Brodrick, P. G., Thompson, D. R., Clark, R. N., Ehlmann, B. L., Okin, G. S., Zhou, B., Kalashnikova, O., Green, R. O., Pérez García-Pando, C."
+    title: "Improved assessment of shortwave absorption by dust aerosols"
+    venue: "24th AeroCom / 13th AeroSat Workshop, Institut Pascal, Université Paris-Saclay, France, 13–17 October 2025"
+    url: "https://aerocom.met.no/events/aerocom2025"
+    cat: "M34"
+    key: "obiso2025aerocom"
+
+  - year: 2025
+    authors: "Gilè, C., Emili, E., Escribano, J., Ilić, L., Jorba Casellas, O., Pérez García-Pando, C."
+    title: "Evaluating the MONARCH model with lidar data: a step toward improving global dust surface concentrations"
+    venue: "EGU General Assembly 2025, Vienna, Austria, 27 April – 2 May 2025"
+    details: "EGU25-9052"
+    doi: "10.5194/egusphere-egu25-9052"
+    cat: "M34"
+    key: "gile2025egu"
+
+  - year: 2023
+    authors: "Mijić, Z. R., Kuzmanoski, M., Ilić, L."
+    title: "Data quality assurance and characterization of Belgrade Raman lidar station"
+    venue: "V Meeting on Astrophysical Spectroscopy — A&M DATA — Astronomy & Earth Observations, Palić, Serbia, 12–15 September 2023"
+    details: "Book of Abstracts and Contributed Papers, p. 73, ISBN 978-86-82441-61-8"
+    url: "http://asspectro2023.ipb.ac.rs/AsSpectro2023_book.pdf"
+    cat: "M34"
+    key: "mijic2023asspectro"
+
+  - year: 2023
+    authors: "Klose, M., Pérez García-Pando, C. and the J-WADI Team (incl. Ilić, L.)"
+    title: "The Jordan Wind erosion And Dust Investigation (J-WADI)"
+    venue: "EGU General Assembly 2023, Vienna, Austria, 24–28 April 2023"
+    details: "EGU23-8286"
+    doi: "10.5194/egusphere-egu23-8286"
+    cat: "M34"
+    key: "klose2023jwadi"
+
+  - year: 2023
+    authors: "Costa-Surós, M., Gonçalves, M., Chatziparaschos, M., Georgakaki, P., Ilić, L., Montane, G., Myriokefalitakis, S., van Noije, T., Le Sager, P., Kanakidou, M., Nenes, A., Pérez García-Pando, C."
+    title: "New aerosol-sensitive heterogeneous ice nucleation parameterization in the EC-Earth3 Earth system model: evaluation and climate response"
+    venue: "EGU General Assembly 2023, Vienna, Austria, 23–28 April 2023"
+    details: "EGU23-13040"
+    doi: "10.5194/egusphere-egu23-13040"
+    cat: "M34"
+    key: "costasuros2023egu"
+
+  - year: 2022
+    authors: "Ilić, L., Gonçalves, M., Obiso, V., Miller, R. L., Escribano, J., Klose, M., Jorba, O., Pérez García-Pando, C."
+    title: "The role of soil mineralogy atlas and iron oxide mixing assumptions upon global and regional dust radiative effects in the MONARCH model"
+    venue: "AGU Fall Meeting 2022, Chicago, IL, 12–16 December 2022"
+    details: "id. A55O-1321"
+    url: "https://agu.confex.com/agu/fm22/meetingapp.cgi/Paper/1143201"
+    cat: "M34"
+    key: "ilic2022agu"
+
+  - year: 2022
+    authors: "Barreto, Á., Cuevas, E., García, R. D., Carillo, J., Prospero, J. M., Ilić, L., Basart, S., Berjón, A., Marrero, C. L., Hernández, Y., Bustos, J. J., Ničković, S., Yela, M."
+    title: "Long-term characterization of the Saharan Air Layer (SAL) in a North Atlantic subtropical site"
+    venue: "International Radiation Symposium 2022, Thessaloniki, Greece, 4–8 July 2022"
+    url: "https://irs2022.org/"
+    cat: "M34"
+    key: "barreto2022irs"
+
+  - year: 2022
+    authors: "Kuzmanoski, M., Ilić, L., Ničković, S."
+    title: "Mineral dust single scattering albedo and radiative effects based on DREAM model"
+    venue: "11th International Conference of the Balkan Physical Union (BPU11), Belgrade, Serbia, 28 August – 1 September 2022"
+    url: "https://indico.bpu11.info/event/1/contributions/139/"
+    cat: "M34"
+    key: "kuzmanoski2022bpu"
+
+  - year: 2022
+    authors: "Kuzmanoski, M., Ilić, L., Ničković, S."
+    title: "Spatial variability of mineral dust single scattering albedo based on DREAM model"
+    venue: "IV Meeting on Astrophysical Spectroscopy — A&M DATA — Atmosphere, Fruška Gora, Serbia, 30 May – 2 June 2022"
+    details: "Book of Abstracts and Contributed Papers, p. 21"
+    url: "http://servo.aob.rs/eeditions/CDS/Workshops/Spectroscopy_4/papers/06.pdf"
+    cat: "M34"
+    key: "kuzmanoski2022amdata"
+
+  - year: 2021
+    authors: "Ilić, L., Marinou, E., Jovanović, A., Kuzmanoski, M., Ničković, S."
+    title: "Ice nucleating particle concentrations in Dust Regional Atmospheric Model (DREAM) — going one step further"
+    venue: "EGU General Assembly 2021"
+    details: "EGU21-7754"
+    doi: "10.5194/egusphere-egu21-7754"
+    cat: "M34"
+    key: "ilic2021egu"
+
+  - year: 2021
+    authors: "Mijić, Z., Kuzmanoski, M., Ilić, L."
+    title: "A study on tropospheric aerosols change during the COVID-19 lockdown period: experience from EARLINET measurement campaign"
+    venue: "8th International WeBIOPATR Workshop & Conference, Belgrade, Serbia, 29 November – 1 December 2021"
+    details: "Book of Abstracts, p. 54, ISBN 978-86-7306-164-1"
+    url: "https://www.vin.bg.ac.rs/webiopatr/media/WeBIOPATR2021_Book_of_Abstracts.pdf"
+    cat: "M34"
+    key: "mijic2021covid"
+
+  - year: 2021
+    authors: "Ničković, S., Ilić, L., Petković, S., Pejanović, G., Huete, A., Mijić, Z."
+    title: "A numerical model for pollen prediction: thunderstorm asthma case study"
+    venue: "8th International WeBIOPATR Workshop & Conference, Belgrade, Serbia, 29 November – 1 December 2021"
+    details: "Book of Abstracts, p. 37, ISBN 978-86-7306-164-1"
+    url: "https://www.vin.bg.ac.rs/webiopatr/media/WeBIOPATR2021_Book_of_Abstracts.pdf"
+    cat: "M34"
+    key: "nickovic2021webiopatr"
+
+  - year: 2020
+    authors: "Ilić, L., Cvetković, B., Pejanović, G., Petković, S., Kuzmanoski, M., Ničković, S."
+    title: "Mineralogy sensitive ice nucleation parameterizations in Dust Regional Atmospheric Model (DREAM)"
+    venue: "EGU General Assembly 2020"
+    details: "EGU2020-15857"
+    doi: "10.5194/egusphere-egu2020-15857"
+    cat: "M34"
+    key: "ilic2020egu"
+
+  - year: 2019
+    authors: "Ilić, L., Jovanović, A., Kuzmanoski, M., Ničković, S."
+    title: "Modeling of immersion freezing initiation of mineral dust in Dust Regional Atmospheric Model DREAM"
+    venue: "7th International WeBIOPATR Workshop & Conference, Belgrade, Serbia, 1–3 October 2019"
+    details: "Book of Abstracts, p. 69"
+    url: "https://www.vin.bg.ac.rs/webiopatr/2025/wp-content/uploads/2023/10/WEBIOPATR2019_Book_Of_Abstracts-1.pdf"
+    cat: "M34"
+    key: "ilic2019webiopatr"
+
+  - year: 2019
+    authors: "Mijić, Z., Jovanović, A., Kuzmanoski, M., Ilić, L."
+    title: "A climatology of satellite derived aerosol optical depth over Belgrade region, Serbia"
+    venue: "7th International WeBIOPATR Workshop & Conference, Belgrade, Serbia, 1–3 October 2019"
+    details: "Book of Abstracts, p. 74, ISBN 978-86-83069-56-9"
+    url: "https://vin.bg.ac.rs/webiopatr/2019/"
+    cat: "M34"
+    key: "mijic2019aod"
+
+  - year: 2019
+    authors: "Jovanović, A., Ilić, L., Kuzmanoski, M., Mijić, Z."
+    title: "Case study of the vertical distribution of Saharan dust over Belgrade"
+    venue: "7th International WeBIOPATR Workshop & Conference, Belgrade, Serbia, 1–3 October 2019"
+    details: "Book of Abstracts, p. 80, ISBN 978-86-83069-56-9"
+    url: "https://vin.bg.ac.rs/webiopatr/2019/"
+    cat: "M34"
+    key: "jovanovic2019saharan"
+
+  - year: 2018
+    authors: "Amiridis, V., Marinou, E., Tsekeri, A., … Ničković, S., Cvetković, B., Ilić, L., … Weinzierl, B."
+    title: "The PRE-TECT campaign — revealing the secrets of desert dust"
+    venue: "European Lidar Conference (ELC) 2018"
+    url: "https://www.auth.gr/wp-content/uploads/%CE%A0%CF%81%CF%8C%CE%B3%CF%81%CE%B1%CE%BC%CE%BC%CE%B1-105.pdf"
+    cat: "M34"
+    key: "amiridis2018pretect"
+
+  - year: 2018
+    authors: "Ilić, L."
+    title: "VI-SEEM DREAMCLIMATE service"
+    venue: "International Conference: E-Infrastructures for Excellent Science in Southeast Europe and Eastern Mediterranean, Sofia, Bulgaria, 15–16 May 2018"
+    url: "https://events.grnet.gr/event/64/overview"
+    cat: "M34"
+    key: "ilic2018viseem"
+
+  - year: 2018
+    authors: "Ilić, L., Cvetković, B., Pejanović, G., Petković, S., Kuzmanoski, M., Ničković, S."
+    title: "Modeling of mineral composition effects on ice nucleation due to dust in Dust Regional Atmospheric Model (DREAM)"
+    venue: "EGU General Assembly 2018, Vienna, Austria"
+    details: "Geophysical Research Abstracts, Vol. 20, EGU2018-16921"
+    url: "https://meetingorganizer.copernicus.org/EGU2018/EGU2018-16921.pdf"
+    cat: "M34"
+    key: "ilic2018egu"
+
+  - year: 2018
+    authors: "Ničković, S., Cvetković, B., Pejanović, G., Ilić, L., Madonna, F., Weber, D., Vuković, A., Nikolić, J., Petković, S."
+    title: "Predicting atmospheric dust process from Icelandic soil sources"
+    venue: "EGU General Assembly 2018, Vienna, Austria"
+    details: "Geophysical Research Abstracts, Vol. 20, EGU2018-10338"
+    url: "https://meetingorganizer.copernicus.org/EGU2018/EGU2018-10338.pdf"
+    cat: "M34"
+    key: "nickovic2018iceland"
+
+  - year: 2018
+    authors: "Cvetković, B., Ilić, L., Madonna, F., Weber, D., Ničković, S., Vuković, A., Pejanović, G., Nikolić, J., Bingemer, H., Vujadinović, M., Đurđević, V."
+    title: "Modeling heterogeneous ice nucleation due to mineral dust using Dust Regional Atmospheric Model (DREAM-NMME)"
+    venue: "EGU General Assembly 2018, Vienna, Austria"
+    details: "Geophysical Research Abstracts, Vol. 20, EGU2018-10050"
+    url: "https://meetingorganizer.copernicus.org/EGU2018/EGU2018-10050.pdf"
+    cat: "M34"
+    key: "cvetkovic2018egu"
+
+  - year: 2017
+    authors: "Ilić, L., Cvetković, B., Ničković, S."
+    title: "Assessment of health effects of exposure to atmospheric mineral dust using the NMME-DREAM model"
+    venue: "Earth's Climate Changes and Impacts Conference, Belgrade, Serbia, 11–13 October 2017"
+    details: "Book of Abstracts, p. 67"
+    cat: "M34"
+    key: "ilic2017health"
+
+  - year: 2017
+    authors: "Kuzmanoski, M., Ilić, L., Mijić, Z."
+    title: "Aerosol remote sensing study of a Saharan dust intrusion episode in Belgrade, Serbia"
+    venue: "XIX International Eco-Conference, Belgrade, Serbia, 25–27 September 2017"
+    details: "pp. 73–81"
+    cat: "M34"
+    key: "kuzmanoski2017eco"
+
+  - year: 2017
+    authors: "Mijić, Z., Perišić, M., Stojić, A., Kuzmanoski, M., Ilić, L."
+    title: "Estimation of atmospheric aerosol transport by ground-based remote sensing and modeling"
+    venue: "XIX International Eco-Conference, Belgrade, Serbia, 25–27 September 2017"
+    details: "pp. 375–382"
+    cat: "M34"
+    key: "mijic2017eco"
+
+  - year: 2017
+    authors: "Mijić, Z., Ilić, L., Kuzmanoski, M."
+    title: "Vertical Raman lidar profiling of atmospheric aerosol optical properties over Belgrade"
+    venue: "6th International School and Conference on Photonics (PHOTONICA2017), Belgrade, Serbia, 28 August – 1 September 2017"
+    details: "Book of Abstracts, p. 210, ISBN 978-86-82441-46-5"
+    url: "http://www.photonica.ac.rs/2017/docs/BookOfAbstracts_14.08.2017.pdf"
+    cat: "M34"
+    key: "mijic2017photonica"
+
+  - year: 2016
+    authors: "Kuzmanoski, M., Ničković, S., Ilić, L."
+    title: "Spatial distribution of mineral dust single scattering albedo based on DREAM model"
+    venue: "EGU General Assembly 2016, Vienna, Austria"
+    details: "Geophysical Research Abstracts, EGU2016-4425"
+    url: "https://meetingorganizer.copernicus.org/EGU2016/EGU2016-4425.pdf"
+    cat: "M34"
+    key: "kuzmanoski2016egu"
