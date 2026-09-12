@@ -260,6 +260,23 @@ talks:
     title: "Numerical weather prediction Eta model"
     outlet: "Maxeler Workshop, University of Kragujevac, Serbia"
 
+# Embedded videos at the foot of the page. "id" is the part of the YouTube URL
+# after v= or youtu.be/. Remove the list to drop the section.
+videos:
+  - id: "xfgxnmvlbSc"
+    title: "Superheroes of Science"
+    outlet: "Purdue University, December 2025"
+  # "mp4" instead of "id" for a direct video file rather than a YouTube embed.
+  - mp4: "https://hpc.rs/user/pages/04.usecases/weather-and-climate-research/LIlic-Dust.eng.mp4"
+    title: "Weather and climate research on HPC infrastructures"
+    outlet: "EuroCC4SEE / HPC Serbia, November 2025"
+  - id: "cXx1R9ucynw"
+    title: "Radio Galaksija, episode 196: atmospheric dust"
+    outlet: "December 2024"
+  - id: "L-BKnvwHsqg"
+    title: "How does it rain? — Vrt fizike"
+    outlet: "November 2020"
+
 dust_protocol:
   description: >
     The Dust Protocol turns dust model output into sound and image, performed live at science and

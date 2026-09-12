@@ -158,6 +158,10 @@ def bib_entry(entry, kind):
 # --------------------------------------------------------------------------
 
 def main():
+    # python3 build.py --staging  ->  ask search engines to stay away
+    staging = "--staging" in sys.argv
+    noindex = '<meta name="robots" content="noindex, nofollow">\n' if staging else ""
+
     cfg = load("site.yml")
     cfg.update(load("articles.yml"))
     cfg.update(load("reports.yml"))
@@ -224,6 +228,26 @@ def main():
                 (", " + esc(i["date"])) if i.get("date") else "")
             for i in items)
 
+    vids = cfg.get("videos") or []
+    videos_html = ""
+    if vids:
+        def player(v):
+            if v.get("mp4"):
+                return ('<video src="%s" controls preload="none" playsinline></video>'
+                        % esc(v["mp4"]))
+            return ('<iframe src="https://www.youtube-nocookie.com/embed/%s" title="%s"'
+                    ' loading="lazy" allowfullscreen'
+                    ' allow="accelerometer; clipboard-write; encrypted-media;'
+                    ' picture-in-picture"></iframe>'
+                    % (esc(v["id"]), esc(v["title"])))
+
+        cards = "".join(
+            '<figure><div class="embed">%s</div>'
+            '<figcaption>%s<span class="when">%s</span></figcaption></figure>'
+            % (player(v), esc(v["title"]), esc(v.get("outlet", "")))
+            for v in vids)
+        videos_html = ('<h2 id="videos">Videos</h2>\n<div class="videos">%s</div>\n\n' % cards)
+
     dp = cfg["dust_protocol"]
     dp_links = " · ".join('<a href="%s">%s</a>' % (esc(l["url"]), esc(l["name"]))
                           for l in dp["links"])
@@ -232,6 +256,7 @@ def main():
                        '<a href="#projects">Projects</a>',
                        '<a href="#talks">Talks</a>',
                        '<a href="#outreach">Outreach</a>',
+                       '<a href="#videos">Videos</a>',
                        '<a href="#dust-protocol">The Dust Protocol</a>',
                        '<a href="publications.html">All publications</a>']
 
@@ -240,7 +265,7 @@ def main():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>%(name)s</title>
+%(noindex)s<title>%(name)s</title>
 <meta name="description" content="%(desc)s">
 <meta property="og:title" content="%(name)s">
 <meta property="og:description" content="%(desc)s">
@@ -282,13 +307,14 @@ def main():
 <h3>Press</h3>
 <ul class="plain">%(press)s</ul>
 
-<h2 id="dust-protocol">The Dust Protocol</h2>
+%(videos)s<h2 id="dust-protocol">The Dust Protocol</h2>
 <p>%(dp_desc)s</p>
 <p>%(dp_links)s</p>
 
 </body>
 </html>
 """ % {
+        "noindex": noindex,
         "logo": ('<img class="logo" src="%s" alt="Atmospheric Dust">' % esc(cfg["logo"]))
                 if cfg.get("logo") else "",
         "subtitle": ('<p class="subtitle">%s</p>' % esc(cfg["subtitle"]))
@@ -302,6 +328,7 @@ def main():
         "campaign_gallery": gallery(cfg, "campaigns"),
         "interviews": simple(cfg["interviews"]), "press": simple(cfg["press"]),
         "talks": simple(cfg["talks"]),
+        "videos": videos_html,
         "dp_desc": esc(dp["description"]), "dp_links": dp_links,
         "orcid": esc(site["orcid"]), "total": total,
         "today": date.today().isoformat(),
@@ -314,7 +341,7 @@ def main():
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Publications — %(name)s</title>
+%(noindex)s<title>Publications — %(name)s</title>
 <meta name="description" content="Complete list of %(total)d publications by %(name)s.">
 <link rel="canonical" href="%(base)s/publications.html">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -341,6 +368,7 @@ def main():
 </body>
 </html>
 """ % {
+        "noindex": noindex,
         "logo": ('<a href="index.html"><img class="logo" src="%s" alt="Atmospheric Dust"></a>'
                  % esc(cfg["logo"])) if cfg.get("logo") else "",
         "name": esc(site["name"]), "base": esc(site["base_url"]), "font": FONT_LINK,
@@ -362,10 +390,12 @@ def main():
         "<url><loc>%s</loc><lastmod>%s</lastmod></url></urlset>\n"
         % (site["base_url"], date.today().isoformat()), encoding="utf-8")
     (ROOT / "robots.txt").write_text(
+        "User-agent: *\nDisallow: /\n" if staging else
         "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % site["base_url"],
         encoding="utf-8")
 
-    print("Built index.html and publications.html — %d publications." % total)
+    print("Built index.html and publications.html — %d publications.%s"
+          % (total, "  [staging: noindex]" if staging else ""))
 
 
 if __name__ == "__main__":

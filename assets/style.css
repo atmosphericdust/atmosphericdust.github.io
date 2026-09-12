@@ -157,3 +157,40 @@ h2 + .gallery { margin-top: 1rem; }
   height: auto;
   margin: 0 0 1.75rem;
 }
+
+.videos {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1.25rem .75rem;
+  margin: 1.5rem 0 0;
+}
+.videos figure { margin: 0; }
+.embed {
+  position: relative;
+  aspect-ratio: 16 / 9;
+  background: #ebebe8;
+  border-radius: 2px;
+  overflow: hidden;
+}
+.embed iframe {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  border: 0;
+}
+.videos figcaption {
+  margin-top: .45rem;
+  font-size: .9375rem;
+  line-height: 1.35;
+}
+.videos figcaption .when { display: block; color: var(--muted); font-size: .875rem; }
+
+.embed video {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  background: #000;
+}
