@@ -159,10 +159,8 @@ h2 + .gallery { margin-top: 1rem; }
   .videos { grid-template-columns: 1fr !important; }
 }
 
-@media (max-width: 30rem) {
-  .gallery { grid-template-columns: 1fr 1fr; }
-  .gallery img:last-child { grid-column: span 2; }
-}
+/* The column count is set inline by the build, so the strips keep their
+   shape on phones — two images side by side rather than stacked. */
 
 .logo {
   display: block;
