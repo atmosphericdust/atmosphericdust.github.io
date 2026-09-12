@@ -220,7 +220,7 @@ def main():
     rest = sum(n for label, n in counts.items()
                if label != "Papers")
     sections.append(
-        '<p class="note">The remaining %d items — %s — are on the '
+        '<p class="pointer">The remaining %d items — %s — are on the '
         '<a href="publications.html">complete publication list</a>.</p>'
         % (rest, ", ".join(count_label(label, n) for label, n in counts.items()
                            if label != "Papers")))
@@ -330,7 +330,7 @@ def main():
 <h2 id="field-campaigns">Field campaigns</h2>
 <ul class="plain">%(campaigns)s</ul>
 
-<p class="note">Also here: <a href="talks.html">talks</a> (19 invited and contributed),
+<p class="pointer">Also here: <a href="talks.html">talks</a> (19 invited and contributed),
 <a href="projects.html">projects</a> (nine, 2007 to 2025), and
 <a href="outreach.html">outreach</a> (interviews and press).</p>
 

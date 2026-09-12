@@ -111,6 +111,16 @@ ul.plain .when { color: var(--muted); font-size: .9375rem; }
 
 .note { color: var(--muted); font-size: .9375rem; }
 
+/* Links to the other pages — these are navigation, not footnotes, so they
+   stay at body size and in the normal ink colour. */
+.pointer {
+  font-size: 1.0625rem;
+  color: var(--ink);
+  margin: 1.5rem 0 0;
+  padding-top: 1rem;
+  border-top: 1px solid var(--rule);
+}
+
 footer {
   margin-top: 4rem;
   padding-top: 1rem;
