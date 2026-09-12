@@ -21,7 +21,7 @@
   --rule: #e4e4e4;
   --accent: #2f6f9f;       /* links: muted blue */
   --accent-dark: #1f4f74;  /* link hover */
-  --width: 46rem;
+  --width: 60rem;
 }
 
 *, *::before, *::after { box-sizing: border-box; }
@@ -153,7 +153,7 @@ h2 + .gallery { margin-top: 1rem; }
 .logo {
   display: block;
   width: 100%;
-  max-width: 22rem;
+  max-width: 24rem;
   height: auto;
   margin: 0 0 1.75rem;
 }
