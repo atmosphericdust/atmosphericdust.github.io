@@ -207,3 +207,69 @@ h2 + .gallery { margin-top: 1rem; }
   object-fit: cover;
   background: #000;
 }
+
+/* ---------- contact form ---------- */
+
+.contactform {
+  max-width: 34rem;
+  margin: 1.5rem 0 0;
+}
+
+.contactform label {
+  display: block;
+  font-size: .9375rem;
+  margin: 1.1rem 0 .3rem;
+}
+
+.contactform input[type="text"],
+.contactform input[type="email"],
+.contactform textarea {
+  width: 100%;
+  font-family: var(--font);
+  font-size: 1rem;
+  line-height: 1.5;
+  color: var(--ink);
+  background: #fff;
+  border: 1px solid var(--rule);
+  border-radius: 2px;
+  padding: .55rem .7rem;
+}
+
+.contactform textarea { resize: vertical; min-height: 9rem; }
+
+.contactform input:focus,
+.contactform textarea:focus {
+  outline: 2px solid var(--accent);
+  outline-offset: 1px;
+  border-color: var(--accent);
+}
+
+/* Honeypot: bots fill it, people never see it. */
+.botcheck {
+  position: absolute !important;
+  left: -9999px !important;
+  opacity: 0;
+}
+
+.contactform button {
+  font-family: var(--font);
+  font-size: 1rem;
+  margin-top: 1.4rem;
+  padding: .55rem 1.4rem;
+  color: #fff;
+  background: var(--accent);
+  border: 1px solid var(--accent);
+  border-radius: 2px;
+  cursor: pointer;
+}
+.contactform button:hover { background: var(--accent-dark); border-color: var(--accent-dark); }
+.contactform button:disabled { opacity: .55; cursor: default; }
+
+.formstatus {
+  margin: .9rem 0 0;
+  font-size: .9375rem;
+  min-height: 1.4em;
+  color: var(--muted);
+}
+.formstatus.ok { color: #1f6b3a; }
+.formstatus.err { color: #9a2b1f; }

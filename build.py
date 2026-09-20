@@ -99,6 +99,90 @@ SUBPAGE = """<!doctype html>
 """
 
 
+def contact_form(cfg):
+    """The Web3Forms contact form, or a fallback when no key is configured."""
+    conf = cfg.get("contact") or {}
+    key = (conf.get("web3forms_key") or "").strip()
+    links = " · ".join(
+        '<a href="%s">%s</a>' % (esc(p["url"]), esc(p["name"]))
+        for p in cfg["profiles"] if p["name"] == "LinkedIn")
+
+    if not key:
+        return ('<p>The contact form is not connected yet. In the meantime you can '
+                'reach me through %s.</p>'
+                '<!-- Add web3forms_key to data/site.yml and rebuild to enable the '
+                'form here. -->' % links)
+
+    # The honeypot must be visible to a bot and hidden from people, so it is a
+    # real checkbox hidden with CSS rather than type="hidden".
+    return """<form class="contactform" action="https://api.web3forms.com/submit" method="POST">
+<input type="hidden" name="access_key" value="%(key)s">
+<input type="hidden" name="subject" value="%(subject)s">
+<input type="hidden" name="from_name" value="atmosphericdust.com">
+
+<label for="cf-name">Your name</label>
+<input id="cf-name" type="text" name="name" required autocomplete="name">
+
+<label for="cf-email">Your email</label>
+<input id="cf-email" type="email" name="email" required autocomplete="email">
+
+<label for="cf-message">Message</label>
+<textarea id="cf-message" name="message" rows="8" required></textarea>
+
+<input type="checkbox" name="botcheck" class="botcheck" tabindex="-1" autocomplete="off" aria-hidden="true">
+
+<button type="submit">Send message</button>
+<p class="formstatus" role="status" aria-live="polite"></p>
+</form>
+
+<p class="note">Your address is used only so I can reply. Nothing is stored on
+this site, and the form is handled by <a href="https://web3forms.com">Web3Forms</a>.
+If it will not send, %(links)s works too.</p>
+
+<script>
+(function () {
+  var form = document.querySelector('.contactform');
+  if (!form) return;
+  var status = form.querySelector('.formstatus');
+  var button = form.querySelector('button');
+
+  form.addEventListener('submit', function (event) {
+    event.preventDefault();
+    if (button.disabled) return;
+    button.disabled = true;
+    status.className = 'formstatus';
+    status.textContent = 'Sending...';
+
+    fetch(form.action, {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json', 'Accept': 'application/json' },
+      body: JSON.stringify(Object.fromEntries(new FormData(form)))
+    }).then(function (response) {
+      return response.json();
+    }).then(function (result) {
+      if (result.success) {
+        form.reset();
+        status.className = 'formstatus ok';
+        status.textContent = 'Thank you, your message has been sent.';
+      } else {
+        status.className = 'formstatus err';
+        status.textContent = 'That did not send. Please try again in a moment.';
+      }
+    }).catch(function () {
+      status.className = 'formstatus err';
+      status.textContent = 'Could not reach the server. Please try again later.';
+    }).then(function () {
+      button.disabled = false;
+    });
+  });
+})();
+</script>""" % {
+        "key": esc(key),
+        "subject": esc(conf.get("subject") or "Message from the website"),
+        "links": links,
+    }
+
+
 def gallery(cfg, name):
     """A row of three images, used above Papers and above Field campaigns."""
     items = (cfg.get("galleries") or {}).get(name) or []
@@ -435,6 +519,16 @@ def main():
         body='<ul class="plain">%s</ul>' % simple(cfg["talks"]),
     ), encoding="utf-8")
 
+    (ROOT / "contact.html").write_text(SUBPAGE % dict(
+        shell,
+        heading="Contact",
+        file="contact.html",
+        desc="Get in touch with %s." % site["name"],
+        extra_links="",
+        intro='<p>%s</p>' % esc((cfg.get("contact") or {}).get("intro", "")),
+        body=contact_form(cfg),
+    ), encoding="utf-8")
+
     (ROOT / "outreach.html").write_text(SUBPAGE % dict(
         shell,
         heading="Outreach",
@@ -456,14 +550,14 @@ def main():
         + "".join("<url><loc>%s/%s</loc><lastmod>%s</lastmod></url>"
                   % (site["base_url"], f, date.today().isoformat())
                   for f in ("", "publications.html", "talks.html",
-                            "projects.html", "outreach.html"))
+                            "projects.html", "outreach.html", "contact.html"))
         + "</urlset>\n", encoding="utf-8")
     (ROOT / "robots.txt").write_text(
         "User-agent: *\nDisallow: /\n" if staging else
         "User-agent: *\nAllow: /\nSitemap: %s/sitemap.xml\n" % site["base_url"],
         encoding="utf-8")
 
-    print("Built 5 pages — %d publications.%s"
+    print("Built 6 pages — %d publications.%s"
           % (total, "  [staging: noindex]" if staging else ""))
 
 

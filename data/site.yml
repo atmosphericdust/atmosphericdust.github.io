@@ -48,11 +48,22 @@ galleries:
       alt: "Lidar beams during the PRE-TECT campaign, Crete"
       position: "center 40%"
 
+# Contact form, handled by Web3Forms (web3forms.com). Enter the address you
+# want messages delivered to on their site and they email you an access key,
+# a UUID. Paste it below. The key is public in the page source by design; it
+# only lets a form post to your inbox, and your address never appears here.
+# While the key is empty the page shows the other ways to get in touch
+# instead of a form that would fail.
+contact:
+  web3forms_key: "b481df46-dac2-4ddd-8408-41a7e6a958a4"
+  subject: "Message from atmosphericdust.com"
+  intro: >
+    For questions about the work, collaboration, data or an invitation to speak.
+    Messages come straight to my inbox.
+
 profiles:
-  # "Contact" points at LinkedIn since the email address is off the site.
-  # Change the url here, or set email: above to get a mailto link instead.
   - name: "Contact"
-    url: "https://www.linkedin.com/in/luka-ili%C4%87-phd-b0287525/"
+    url: "contact.html"
   - name: "ORCID"
     url: "https://orcid.org/0000-0003-2933-9801"
   - name: "Google Scholar"
